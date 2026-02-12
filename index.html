@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Highway Rush</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <div id="main-menu" class="screen">
+            <h1>HIGHWAY RUSH</h1>
+            <button class="menu-btn" onclick="game.start()">START GAME</button>
+            <button class="menu-btn" onclick="ui.showInstructions()">INSTRUCTIONS</button>
+            <button class="menu-btn" onclick="window.close()">QUIT</button>
+        </div>
+
+        <div id="instructions-screen" class="screen hidden">
+            <h2>OBJECTIVE</h2>
+            <p>Dodge incoming cars by moving your car left or right[cite: 24]. Survive as long as you can to earn a high score[cite: 25]!</p>
+            <h3>CONTROLS</h3>
+            <ul>
+                <li><strong>A Key:</strong> Move Left [cite: 27]</li>
+                <li><strong>D Key:</strong> Move Right [cite: 28]</li>
+                <li><strong>ESC:</strong> Exit Game [cite: 29]</li>
+            </ul>
+            <p><em>Press any key to return to menu [cite: 37]</em></p>
+        </div>
+
+        <div id="game-over-screen" class="screen hidden">
+            <h1>GAME OVER !!</h1>
+            <p id="final-score-text">YOUR TOTAL SCORE IS: 0</p>
+            <button class="menu-btn" onclick="game.start()">RESTART</button>
+            <button class="menu-btn" onclick="ui.showMenu()">EXIT</button>
+        </div>
+
+        <div id="score-display">SCORE: 0</div>
+        <div id="road">
+            <div id="player" class="car player-car"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
