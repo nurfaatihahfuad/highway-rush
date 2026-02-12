@@ -1,18 +1,18 @@
 :root {
-    --bg-color: #00acc1;
-    --road-color: #0097a7;
-    --player-color: #ff5722;
-    --enemy-color: #1976d2;
+    --bg-color: #00acc1; /* Teal aesthetic from source images */
+    --player-color: #ff5722; /* Orange car for player */
+    --enemy-color: #1976d2; /* Blue cars for enemies */
 }
 
 body {
     margin: 0;
+    padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     background-color: #1a1a1a;
-    font-family: 'Arial', sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
     color: white;
     overflow: hidden;
 }
@@ -22,10 +22,11 @@ body {
     width: 400px;
     height: 600px;
     background-color: var(--bg-color);
-    border: 5px solid white; /* Game Border [cite: 13] */
+    border: 5px solid white; /* Gameplay border drawn */
     overflow: hidden;
 }
 
+/* Screens Overlays */
 .screen {
     position: absolute;
     inset: 0;
@@ -33,49 +34,71 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: rgba(0, 172, 193, 0.95);
-    z-index: 10;
+    background: rgba(0, 151, 167, 0.98);
+    z-index: 20;
     text-align: center;
+    padding: 20px;
 }
 
 .hidden { display: none !important; }
 
 .menu-btn {
     background: white;
-    color: var(--bg-color);
+    color: #00838f;
     border: none;
-    padding: 12px 30px;
-    margin: 8px;
+    padding: 12px 25px;
+    margin: 10px;
     font-weight: bold;
+    font-size: 1rem;
     cursor: pointer;
-    width: 180px;
-    text-transform: uppercase;
+    width: 200px;
+    transition: background 0.2s;
 }
 
+.menu-btn:hover {
+    background: #e0f7fa;
+}
+
+/* HUD */
 #score-display {
     position: absolute;
     top: 15px;
     left: 15px;
-    font-size: 1.2rem;
-    z-index: 5;
+    font-size: 1.4rem;
+    font-weight: bold;
+    z-index: 10;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
+/* Game Objects */
 .car {
     position: absolute;
     width: 50px;
     height: 90px;
-    border-radius: 4px;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
 .player-car {
     background: var(--player-color);
     bottom: 20px;
-    left: 175px;
-    border: 2px solid #bf360c;
+    left: 175px; /* Center start position */
+    border: 3px solid #bf360c;
+    z-index: 5;
 }
 
 .enemy-car {
     background: var(--enemy-color);
-    top: -100px;
-    border: 2px solid #0d47a1;
+    border: 3px solid #0d47a1;
+    z-index: 4;
+}
+
+/* Road visuals */
+.lane-line {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8px;
+    height: 60px;
+    background: rgba(255,255,255,0.4);
 }
