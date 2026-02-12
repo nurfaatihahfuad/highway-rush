@@ -10,16 +10,16 @@
     <div id="game-container">
         <div id="main-menu" class="screen">
             <h1>HIGHWAY RUSH</h1>
-            <button class="menu-btn" onclick="game.start()">START GAME</button>
-            <button class="menu-btn" onclick="ui.showInstructions()">INSTRUCTIONS</button>
-            <button class="menu-btn" onclick="window.close()">QUIT</button>
+            <button class="menu-btn">START GAME</button>
+            <button class="menu-btn">INSTRUCTIONS</button>
+            <button class="menu-btn">QUIT</button>
         </div>
 
         <div id="instructions-screen" class="screen hidden">
             <h2>OBJECTIVE</h2>
-            <p>Dodge incoming cars by moving your car left or right[cite: 24]. Survive as long as you can to earn a high score[cite: 25]!</p>
+            <p>Dodge incoming cars by moving your car left or right[cite: 24]. Survive as long as you can to earn a high score! [cite: 25]</p>
             <h3>CONTROLS</h3>
-            <ul>
+            <ul style="list-style: none; padding: 0;">
                 <li><strong>A Key:</strong> Move Left [cite: 27]</li>
                 <li><strong>D Key:</strong> Move Right [cite: 28]</li>
                 <li><strong>ESC:</strong> Exit Game [cite: 29]</li>
@@ -29,13 +29,16 @@
 
         <div id="game-over-screen" class="screen hidden">
             <h1>GAME OVER !!</h1>
-            <p id="final-score-text">YOUR TOTAL SCORE IS: 0</p>
-            <button class="menu-btn" onclick="game.start()">RESTART</button>
-            <button class="menu-btn" onclick="ui.showMenu()">EXIT</button>
+            <p id="final-score-text">YOUR TOTAL SCORE IS 0</p>
+            <button class="menu-btn">RESTART</button>
+            <button class="menu-btn">EXIT</button>
         </div>
 
         <div id="score-display">SCORE: 0</div>
         <div id="road">
+            <div class="lane-line" style="top: 10%"></div>
+            <div class="lane-line" style="top: 40%"></div>
+            <div class="lane-line" style="top: 70%"></div>
             <div id="player" class="car player-car"></div>
         </div>
     </div>
